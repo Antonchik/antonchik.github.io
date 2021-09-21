@@ -1,33 +1,16 @@
-## Welcome to GitHub Pages
+# NavCalc
 
-You can use the [editor on GitHub](https://github.com/Antonchik/navcalcapp_support/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Welcome to NavCalc Support Page
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Description
 
-### Markdown
+This navigation calculator has a simple but functional and intuitive design, and allow you to solve a bundle of the most common navigation problems:
+- Conversion between different unit systems for distance, height, speed, time, pressure, temperature and so on
+- Solving several geodetic problems such as both direct and inverse problem, finding of magnetic variation for specific location, calculating coordinates of intersection point for two given radials, and funny but useful task of defining the distane to horizon for given spectator's height
+- Flight tasks including calculation of wind triangle, wind components (crosswind and headwind), holding pattern details, and parameters of turn
+- Calculation of atmosphere-related characteristics for specific altitude such as ISA values, true airspeed given indicated airspeed, transfering from QFE to QNH and vice versa, and defining of required temperature correction for barometric altimeter
+- Providing you with various help information about aircrafts, airlines and airports, reference information regarding phonetic aviation alphabet along with Morse code, a very useful handbook of aviation abbreviations and acronyms, and a calendar to obtain information about upcoming AIRAC cycle dates
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Antonchik/navcalcapp_support/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Feedback
+For questions and recommendations please send your feedback to NavCalc.feedback@gmail.com
