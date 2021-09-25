@@ -13,4 +13,7 @@ This navigation calculator has a simple but functional and intuitive design, and
 
 
 ### Feedback
-For questions and recommendations please send your feedback to NavCalc.feedback@gmail.com
+For questions and recommendations please send your feedback to <NavCalc.feedback@gmail.com>
+
+### Donate
+If you like what I do, you can [buy me a coffee](https://ko-fi.com/antonantonchik)
