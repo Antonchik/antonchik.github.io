@@ -1,4 +1,5 @@
 # NavCalc
+![](https://play-lh.googleusercontent.com/l0LD9lYVSbbV2q6_4QDzQjESzBo14Cul_E192lrEMpYGp6vAChSms5OaAsHvpUkp3hoY=w660-h320-rw)
 
 ## Welcome to NavCalc Support Page
 
