@@ -17,5 +17,4 @@ This navigation calculator has a simple but functional and intuitive design, and
 For questions and recommendations please send your feedback to <NavCalc.feedback@gmail.com>
 
 ### Donate
-If you like what I do, you can [buy me a coffee](https://ko-fi.com/antonantonchik)
-<a href='https://ko-fi.com/K3K56CCST' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+If you like what I do, you can <a href='https://ko-fi.com/K3K56CCST' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
