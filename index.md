@@ -3,7 +3,7 @@
 
 <a href='https://apps.apple.com/ru/app/navcalc/id1586660769'><img alt='Download on the App Store' height='60' src='https://firebasestorage.googleapis.com/v0/b/navcalc-app.appspot.com/o/appstore_badge_en.png?alt=media&token=54540c08-97b7-4603-b553-917a79362ffe'/></a>
 <a href='https://play.google.com/store/apps/details?id=antonchik.anton.navcalcapp'><img alt='Get it on Google Play' height='60' src='https://firebasestorage.googleapis.com/v0/b/navcalc-app.appspot.com/o/google_play_badge_en.png?alt=media&token=43150685-777e-4bdb-86f0-45da1d06db47'/></a>
-<a href='https://appgallery.cloud.huawei.com/ag/n/app/C104806419'><img alt='Explore it on AppGallery' height='60' src='https://appgallery.cloud.huawei.com/ag/n/app/C104806419?channelId=test&id=03726825c6a14a1c99c6131f63e13b99&s=913DBE58F6AEBE6405142270D2151793D227A67DBA16D0E35FBB9A637770A4DC&detailType=0&v='/></a>
+<a href='https://appgallery.cloud.huawei.com/ag/n/app/C104806419'><img alt='Explore it on AppGallery' height='60' src='https://firebasestorage.googleapis.com/v0/b/navcalc-app.appspot.com/o/app_gallery_60.png?alt=media&token=6625bf24-0329-4b93-b931-95442db7b9fa'/></a>
 
 ## Welcome to NavCalc Support Page
 
