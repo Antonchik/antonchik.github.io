@@ -1,7 +1,7 @@
 # NavCalc
 ![](https://play-lh.googleusercontent.com/l0LD9lYVSbbV2q6_4QDzQjESzBo14Cul_E192lrEMpYGp6vAChSms5OaAsHvpUkp3hoY=w660-h320-rw)
 
-<a href='https://play.google.com/store/apps/details?id=antonchik.anton.navcalcapp&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' height='50' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
+<a href='https://play.google.com/store/apps/details?id=antonchik.anton.navcalcapp&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' height='100' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
 
 ## Welcome to NavCalc Support Page
 
