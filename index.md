@@ -2,7 +2,7 @@
 ![](https://play-lh.googleusercontent.com/l0LD9lYVSbbV2q6_4QDzQjESzBo14Cul_E192lrEMpYGp6vAChSms5OaAsHvpUkp3hoY=w660-h320-rw)
 
 <a href='https://apps.apple.com/ru/app/navcalc/id1586660769'><img alt='Download on the App Store' height='80' src='https://firebasestorage.googleapis.com/v0/b/navcalc-app.appspot.com/o/appstore_badge_en.png?alt=media&token=54540c08-97b7-4603-b553-917a79362ffe'/></a>
-<a href='https://play.google.com/store/apps/details?id=antonchik.anton.navcalcapp'><img alt='Get it on Google Play' height='100' src='https://firebasestorage.googleapis.com/v0/b/navcalc-app.appspot.com/o/google_play_badge_en.png?alt=media&token=43150685-777e-4bdb-86f0-45da1d06db47'/></a>
+<a href='https://play.google.com/store/apps/details?id=antonchik.anton.navcalcapp'><img alt='Get it on Google Play' height='80' src='https://firebasestorage.googleapis.com/v0/b/navcalc-app.appspot.com/o/google_play_badge_en.png?alt=media&token=43150685-777e-4bdb-86f0-45da1d06db47'/></a>
 
 ## Welcome to NavCalc Support Page
 
