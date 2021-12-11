@@ -1,5 +1,6 @@
 ---
 layout: page
+theme: jekyll-theme-minimal
 title: "NavCalc"
 permalink: /navcalcapp_support/
 ---
@@ -11,7 +12,7 @@ permalink: /navcalcapp_support/
 <a href='https://play.google.com/store/apps/details?id=antonchik.anton.navcalcapp'><img alt='Get it on Google Play' height='50' src='https://firebasestorage.googleapis.com/v0/b/navcalc-app.appspot.com/o/google_play_badge_en.png?alt=media&token=43150685-777e-4bdb-86f0-45da1d06db47'/></a>
 <a href='https://appgallery.cloud.huawei.com/ag/n/app/C104806419'><img alt='Explore it on AppGallery' height='50' src='https://firebasestorage.googleapis.com/v0/b/navcalc-app.appspot.com/o/app_gallery_60.png?alt=media&token=6625bf24-0329-4b93-b931-95442db7b9fa'/></a>
 
-## Welcome to NavCalc Support Page
+## Welcome to NavCalc Application page
 
 ### Description
 
