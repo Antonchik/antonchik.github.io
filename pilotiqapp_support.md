@@ -2,7 +2,7 @@
 layout: page
 theme: jekyll-theme-minimal
 title: "Pilotiq"
-permalink: /pilotiqapp_support/
+permalink: /pilotiqapp_support
 ---
 
 # Pilotiq
