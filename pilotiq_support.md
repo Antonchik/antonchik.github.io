@@ -1,8 +1,8 @@
 ---
 layout: page
 theme: jekyll-theme-minimal
-title: "NavCalc"
-permalink: /navcalcapp_support/
+title: "Pilotiq"
+permalink: /pilotiq_support/
 ---
 
 # Pilotiq
