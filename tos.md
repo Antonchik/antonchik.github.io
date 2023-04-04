@@ -2,7 +2,7 @@
 layout: page
 theme: jekyll-theme-minimal
 title: Terms of Service Agreement
-permalink: /tos/
+permalink: /pilotiq_tos/
 ---
 
 # Terms of Service Agreement
