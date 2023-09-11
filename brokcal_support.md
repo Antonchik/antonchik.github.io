@@ -6,7 +6,7 @@ permalink: /brokcal_support/
 ---
 
 # Brokcal
-![](https://ibb.co/q9JwPFd)
+![](https://i.ibb.co/nfPS58b/feature-graphic.png)
 
 ## Welcome to Brokcal Application page
 
