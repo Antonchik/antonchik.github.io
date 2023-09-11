@@ -21,28 +21,34 @@ Elevate your health and wellness journey with Brokcal, the all-in-one mobile app
 
 Key Features:
 🍏 Calorie Counter at Your Fingertips 🍏
+
 Keep tabs on your daily caloric intake effortlessly. With Brokcal, tracking your calories has never been easier. Simply input your meals, snacks, and beverages, and let Brokcal do the math for you.
 
 📅 Calendar for Past Days 📅
+
 Review your previous days' calorie consumption with our intuitive calendar feature. Understand your eating patterns and make informed choices for a healthier tomorrow.
 
 📝 Custom Products List 📝
+
 Remember your favorite products and their energy values with ease. Brokcal allows you to create a personalized list of frequently consumed items, making tracking even more efficient.
 
 🎯 Calculate Your Daily Goal 🎯
+
 Not sure how many calories you should consume daily to reach your goals? Brokcal has you covered! Use our built-in calculator to determine your recommended daily calorie intake.
 
 🤳 User-Friendly Interface 🤳
+
 Brokcal boasts a sleek, user-friendly interface that caters to both beginners and fitness enthusiasts. It's the perfect companion for your health and nutrition journey.
 
 🌟 Why Choose Brokcal? 🌟
 
-Effortless calorie tracking
-Customizable product list
-Insightful past-day calendar
-Personalized daily goal calculator
-User-friendly design
-Your path to a healthier, happier you!
+- Effortless calorie tracking
+- Customizable product list
+- Insightful past-day calendar
+- Personalized daily goal calculator
+- User-friendly design
+- Your path to a healthier, happier you!
+
 Download Brokcal now and embark on your journey to better health and nutrition. Make every calorie count with Brokcal, your trusted calories counter and personal nutrition assistant.
 
 Take control of your diet, one calorie at a time. Get started today!
