@@ -1,6 +1,6 @@
 # anton.antonchik.com
 
-Developer site for Anton Antonchik's apps (NavCalc, Pilotiq, Brokcal): developer page, support and legal documents used by App Store / Google Play listings. Plain static HTML/CSS/JS served by GitHub Pages (`.nojekyll`, no build step).
+Developer site for Anton Antonchik's apps (NavCalc, Pilotiq): developer page, support and legal documents used by App Store / Google Play listings. Plain static HTML/CSS/JS served by GitHub Pages (`.nojekyll`, no build step).
 
 ## URLs for store listings
 
@@ -8,7 +8,6 @@ Developer site for Anton Antonchik's apps (NavCalc, Pilotiq, Brokcal): developer
 |---|---|---|---|
 | NavCalc | https://anton.antonchik.com/navcalcapp_support/ | https://anton.antonchik.com/privacy/navcalc/ | — |
 | Pilotiq | https://anton.antonchik.com/pilotiq_support/ | https://anton.antonchik.com/privacy/pilotiq/ | https://anton.antonchik.com/terms/pilotiq/ |
-| Brokcal | https://anton.antonchik.com/brokcal_support/ | https://anton.antonchik.com/privacy/brokcal/ | — |
 
 General: `/support/`, `/legal/`. Old `antonchik.github.io/...` links redirect automatically once the custom domain is set; `/pilotiq_tos/` redirects to `/terms/pilotiq/`. `app-ads.txt` stays at the root.
 
@@ -27,4 +26,4 @@ CNAME                   anton.antonchik.com
 
 1. Cloudflare DNS for antonchik.com: `CNAME anton → antonchik.github.io`, proxy **off** (DNS only).
 2. GitHub → repo Settings → Pages: source branch `gh-pages`, custom domain `anton.antonchik.com`, enable *Enforce HTTPS*.
-3. Cloudflare Email Routing: create `support@antonchik.com` → forward to your inbox.
+3. Cloudflare Email Routing: create `support@antonchik.com`, `navcalc@antonchik.com`, `pilotiq@antonchik.com` → forward to your inbox.

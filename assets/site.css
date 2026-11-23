@@ -506,10 +506,8 @@ h1,h2,h3{ margin:0; font-weight:500; letter-spacing:-.035em; line-height:1.02; }
 /* Tints */
 .t-navcalc{ --tint:var(--ice); }
 .t-pilotiq{ --tint:var(--amber); }
-.t-brokcal{ --tint:var(--lime); }
 .t-oss{ --tint:var(--lilac); }
 body.t-pilotiq{ --accent:var(--amber); }
-body.t-brokcal{ --accent:var(--lime); }
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
