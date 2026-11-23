@@ -191,20 +191,20 @@ def instrument():
     plane = "M0 -20C1.9 -20 2.6 -17 2.6 -14L2.6 -5L18 3L18 6.5L2.6 2.5L2.4 11L7 14.5L7 17L0 15.5L-7 17L-7 14.5L-2.4 11L-2.6 2.5L-18 6.5L-18 3L-2.6 -5L-2.6 -14C-2.6 -17 -1.9 -20 0 -20Z"
     cell = lambda cid, lab, out=False: f'<div class="wt__cell{" wt__cell--out" if out else ""}"><small id="{cid}-l">{lab}</small><b id="{cid}">—</b></div>'
     return f'''<div class="card wt rise" data-d="3" id="wt">
-  <div class="wt__head"><span class="eyebrow"><span class="dot"></span>Live · Wind triangle</span><span class="wt__tas">TAS 100 kt</span></div>
+  <div class="wt__head"><span class="eyebrow"><span class="dot"></span>Live · Wind triangle</span><span class="wt__tas js-only" id="wt-tas" role="group" aria-label="True airspeed, knots"><span>TAS</span><button type="button" data-tas="120" aria-pressed="false">120</button><button type="button" data-tas="250" class="is-on" aria-pressed="true">250</button><button type="button" data-tas="450" aria-pressed="false">450</button><span>kt</span></span></div>
   <svg class="wt__svg" id="wt-svg" viewBox="-8 -8 476 476" role="group" aria-label="Interactive wind triangle: drag the heading marker on the ring or the tip of the wind arrow">
     <defs><clipPath id="wt-clip"><circle cx="230" cy="230" r="178"/></clipPath></defs>
     <circle cx="230" cy="230" r="196" fill="none" stroke="#0a3492" stroke-opacity=".14"/>
     {"".join(g)}
     <circle cx="230" cy="230" r="70" fill="none" stroke="#0a3492" stroke-opacity=".1" stroke-dasharray="2 6"/>
     <circle cx="230" cy="230" r="140" fill="none" stroke="#0a3492" stroke-opacity=".1" stroke-dasharray="2 6"/>
-    <text x="235" y="156" fill="#7c859b" {MONO} font-size="10">50</text><text x="235" y="86" fill="#7c859b" {MONO} font-size="10">100 kt</text>
+    <text id="wt-r1" x="235" y="156" fill="#7c859b" {MONO} font-size="10">125</text><text id="wt-r2" x="235" y="86" fill="#7c859b" {MONO} font-size="10">250 kt</text>
     <path d="M230 52v356M52 230h356" stroke="#0a3492" stroke-opacity=".05"/>
     <g clip-path="url(#wt-clip)"><g id="wt-streaks"></g></g>
     <g id="wt-dyn"></g>
     <g id="wt-plane" transform="translate(230 230) rotate(34) scale(.8)"><path d="{plane}" fill="#0a3492" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></g>
     <g class="wt__h js-only" id="wt-hA" tabindex="0" role="slider" aria-label="Heading, degrees" aria-valuemin="1" aria-valuemax="360" aria-valuenow="34"><circle r="24" fill="transparent"/><circle class="wt__pulse" r="11" fill="none" stroke="#0a3492"/><circle r="9" fill="#0a3492" stroke="#fff" stroke-width="2"/><circle r="2.6" fill="#fff"/></g>
-    <g class="wt__h js-only" id="wt-hG" tabindex="0" role="slider" aria-label="Wind: left and right change direction, up and down change speed" aria-valuemin="0" aria-valuemax="40" aria-valuenow="28"><circle r="26" fill="transparent"/><circle class="wt__pulse" r="15" fill="none" stroke="#7890c8"/><circle r="15" fill="#7890c8" fill-opacity=".16" stroke="#7890c8" stroke-width="1.4"/></g>
+    <g class="wt__h js-only" id="wt-hG" tabindex="0" role="slider" aria-label="Wind: left and right change direction, up and down change speed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70"><circle r="26" fill="transparent"/><circle class="wt__pulse" r="15" fill="none" stroke="#7890c8"/><circle r="15" fill="#7890c8" fill-opacity=".16" stroke="#7890c8" stroke-width="1.4"/></g>
   </svg>
   <div class="wt__grid js-only" aria-live="off">
     {cell("wt-hdg","Heading")}{cell("wt-wind","Wind")}{cell("wt-hw","Headwind")}

@@ -10,16 +10,18 @@
   function f(n) { return n.toFixed(1); }
 
   /* ------------------------------------------------------------------
-     Wind triangle. North-up disc, 1.4 px per knot, TAS fixed at 100 kt.
+     Wind triangle. North-up disc; TAS is picked from presets and always drawn 140 px long.
      Inputs: heading (drag the marker on the ring), wind (drag the arrow tip).
      Outputs: track, ground speed, drift, head/tailwind.
      ------------------------------------------------------------------ */
   (function wind() {
     var svg = $("wt-svg"); if (!svg) return;
     var root = $("wt"), dyn = $("wt-dyn"), plane = $("wt-plane"), hA = $("wt-hA"), hG = $("wt-hG"), streaks = $("wt-streaks");
-    var C = 230, K = 1.4, RING = 196, TAS = 100, MAXW = 40;
+    var C = 230, RING = 196, TAS = 250, K, MAXW;   // K: px per knot, MAXW: wind limit (40 % of TAS)
     var NAVY = "#0a3492", SKY = "#6f8bd0", RED = "#dc1038";
-    var s = { hdg: 34, wd: 300, ws: 28 };
+    var s = { hdg: 34, wd: 300, ws: 70 };
+    function scale() { K = 140 / TAS; MAXW = Math.round(TAS * 0.4 / 10) * 10; }
+    scale();
     var idle = !RM, drag = null;
 
     function pt(brg, r) { return [C + r * Math.sin(brg * RAD), C - r * Math.cos(brg * RAD)]; }
@@ -138,14 +140,32 @@
         } else {
           if (k === "ArrowRight") s.wd = (s.wd + 5 * step) % 360;
           else if (k === "ArrowLeft") s.wd = (s.wd - 5 * step + 360) % 360;
-          else if (k === "ArrowUp") s.ws = Math.min(MAXW, s.ws + step);
-          else if (k === "ArrowDown") s.ws = Math.max(0, s.ws - step);
+          else if (k === "ArrowUp") s.ws = Math.min(MAXW, s.ws + step * (TAS > 200 ? 5 : 1));
+          else if (k === "ArrowDown") s.ws = Math.max(0, s.ws - step * (TAS > 200 ? 5 : 1));
           else used = false;
         }
         if (used) { touched(); e.preventDefault(); render(); }
       });
     }
     bind(hA, "A"); bind(hG, "G");
+
+    // TAS presets: light aircraft, turboprop, jet
+    var tasBox = $("wt-tas");
+    function setTas(v) {
+      var ratio = s.ws / TAS; TAS = v; scale();
+      s.ws = idle ? TAS * ratio : Math.min(MAXW, s.ws);
+      set("wt-r1", String(Math.round(TAS / 2))); set("wt-r2", TAS + " kt");
+      hG.setAttribute("aria-valuemax", MAXW);
+      var b = tasBox.querySelectorAll("button");
+      for (var n = 0; n < b.length; n++) {
+        var on = +b[n].getAttribute("data-tas") === TAS;
+        b[n].classList.toggle("is-on", on); b[n].setAttribute("aria-pressed", on);
+      }
+      render();
+    }
+    if (tasBox) tasBox.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (b) setTas(+b.getAttribute("data-tas"));
+    });
 
     render(); flow(0);
     if (RM) return;
@@ -161,7 +181,7 @@
         if (idle) {
           var t = (ts - t0) / 1000;
           s.wd = 300 + 40 * Math.sin(t * 0.35);
-          s.ws = 28 + 9 * Math.sin(t * 0.23);
+          s.ws = TAS * (0.28 + 0.09 * Math.sin(t * 0.23));
           render();
         }
         off += (6 + s.ws * 1.8) * dt; flow(off);
