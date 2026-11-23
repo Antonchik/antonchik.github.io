@@ -106,8 +106,10 @@ def head(title, desc, path, body_cls=""):
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 {FONTS}
 <link rel="stylesheet" href="/assets/site.css">
 <script defer src="/assets/site.js"></script>
