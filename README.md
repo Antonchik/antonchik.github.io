@@ -14,13 +14,20 @@ General: `/support/`, `/legal/`. Old `antonchik.github.io/...` links keep workin
 ## Structure
 
 ```
-index.html              developer home
+index.html              developer home (live demos)
 support/  legal/        support centre, documents index
 *_support/              app pages (old URLs kept for store links)
 privacy/<app>/  terms/pilotiq/
-assets/                 site.css, site.js, favicon, og image
+assets/site.css         styles
+assets/site.js          small enhancements on every page
+assets/live.js          home page demos: wind triangle, converter, sample quiz, ISA and pressure sliders
+tools/build.py          generator: content and page templates
 wrangler.jsonc          Cloudflare Workers config
 ```
+
+## Editing
+
+Texts, app data and legal documents live in `tools/build.py`. After changing it, run `python3 tools/build.py` — it rewrites the HTML pages in place — and commit the result. Styles and scripts in `assets/` are edited directly.
 
 ## Deploy
 
