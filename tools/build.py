@@ -261,7 +261,7 @@ def page_index():
   <div class="wrap">
     <div class="hero__grid">
       <div>
-        <span class="eyebrow rise"><span class="dot"></span>Independent developer · Flutter · Aviation</span>
+        <span class="eyebrow rise"><span class="dot"></span>Aviation engineer · Independent developer · Flutter</span>
         <h1 class="rise" data-d="1">Precise software<br>for <span class="serif grad">people who&nbsp;fly.</span></h1>
         <p class="lead rise" data-d="2">I design and build focused mobile apps and open-source Dart packages — for pilots, students and anyone who values calm, accurate tools that simply work.</p>
         <div class="hero__cta rise" data-d="3">
