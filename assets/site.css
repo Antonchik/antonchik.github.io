@@ -121,8 +121,9 @@ h1,h2,h3{ margin:0; font-weight:600; letter-spacing:-.035em; line-height:1.03; c
 }
 .nav.is-scrolled .nav__inner{ background:rgba(255,255,255,.9); box-shadow:var(--shadow); }
 .brand{ display:flex; align-items:center; gap:11px; font-weight:600; letter-spacing:-.015em; white-space:nowrap; color:var(--ink); }
-.brand__mark{ width:32px; height:32px; border-radius:10px; display:grid; place-items:center; background:var(--navy); box-shadow:0 6px 14px -6px rgba(10,52,146,.6); }
-.brand__mark svg{ width:18px; height:18px; }
+.brand__mark{ width:34px; height:34px; display:grid; place-items:center; }
+.brand__mark svg{ width:34px; height:34px; filter:drop-shadow(0 4px 8px rgba(10,52,146,.22)); transition:transform .6s var(--ease); }
+.brand:hover .brand__mark svg{ transform:rotate(-8deg) scale(1.05); }
 .nav__links{ display:none; gap:2px; }
 .nav__links a{ font-size:14.5px; color:var(--text-2); padding:8px 14px; border-radius:999px; transition:color .25s, background .25s; }
 .nav__links a:hover{ color:var(--navy); background:var(--wash); }
