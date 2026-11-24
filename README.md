@@ -21,6 +21,7 @@ privacy/<app>/  terms/pilotiq/
 assets/site.css         styles
 assets/site.js          small enhancements on every page
 assets/live.js          home page demos: wind triangle, converter, sample quiz, ISA and pressure sliders
+assets/apps/, shots/    app icons and screenshots from the App Store listings
 tools/build.py          generator: content and page templates
 wrangler.jsonc          Cloudflare Workers config
 ```

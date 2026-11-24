@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="/assets/site.css">
 <script defer src="/assets/site.js"></script>
 </head>
-<body class="">
+<body class="" id="top">
 <div class="ambient" aria-hidden="true"></div>
 <header class="nav">
   <div class="nav__inner">
@@ -29,7 +29,13 @@
     <nav class="nav__links" aria-label="Primary">
       <a href="/#apps">Apps</a><a href="/#open-source">Open source</a><a href="/support/">Support</a><a href="/legal/">Legal</a>
     </nav>
-    <a class="btn btn--sm btn--primary" href="mailto:support@antonchik.com">Contact</a>
+    <div class="nav__end">
+      <details class="nav__menu">
+        <summary aria-label="Menu"><span></span></summary>
+        <nav aria-label="Menu"><a href="/#apps">Apps</a><a href="/#open-source">Open source</a><a href="/support/">Support</a><a href="/legal/">Legal</a></nav>
+      </details>
+      <a class="btn btn--sm btn--primary" href="mailto:support@antonchik.com">Contact</a>
+    </div>
   </div>
 </header>
 <main>
@@ -47,17 +53,17 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="brand" href="/"><span class="brand__mark"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="lgF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a3b7ea"/><stop offset="1" stop-color="#5f7cc6"/></linearGradient></defs><path d="M31.7 85.6A38.3 38.3 0 1 1 68.3 85.6L60.6 62.5H39.4Z" fill="url(#lgF)"/><path d="M50 27.5 57 59H43Z" fill="#ffcf33"/><g fill="none" stroke="#0a3492" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M31.7 85.6A38.3 38.3 0 1 1 68.3 85.6"/><path d="M31.7 85.6 50 13.7 68.3 85.6M39.4 62.5H60.6"/></g></svg></span><span>Anton Antonchik</span></a>
+        <a class="brand" href="/"><span class="brand__mark"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="lgF2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a3b7ea"/><stop offset="1" stop-color="#5f7cc6"/></linearGradient></defs><path d="M31.7 85.6A38.3 38.3 0 1 1 68.3 85.6L60.6 62.5H39.4Z" fill="url(#lgF2)"/><path d="M50 27.5 57 59H43Z" fill="#ffcf33"/><g fill="none" stroke="#0a3492" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M31.7 85.6A38.3 38.3 0 1 1 68.3 85.6"/><path d="M31.7 85.6 50 13.7 68.3 85.6M39.4 62.5H60.6"/></g></svg></span><span>Anton Antonchik</span></a>
         <p class="muted" style="max-width:34ch;margin:18px 0 0;font-size:14.5px">Independent developer of mobile apps and open-source Dart packages. Built with care, supported personally.</p>
       </div>
-      <div><h4>Apps</h4><ul><li><a href="/navcalcapp_support/">NavCalc</a></li><li><a href="/pilotiq_support/">Pilotiq</a></li></ul></div>
-      <div><h4>Help</h4><ul><li><a href="/support/">Support</a></li><li><a href="mailto:support@antonchik.com">support@antonchik.com</a></li><li><a href="https://ko-fi.com/K3K56CCST" target="_blank" rel="noopener">Support my work</a></li></ul></div>
-      <div><h4>Legal</h4><ul><li><a href="/legal/">All documents</a></li><li><a href="/privacy/navcalc/">Privacy · NavCalc</a></li><li><a href="/privacy/pilotiq/">Privacy · Pilotiq</a></li><li><a href="/terms/pilotiq/">Terms · Pilotiq</a></li></ul></div>
+      <div><h2 class="footer__h">Apps</h2><ul><li><a href="/navcalcapp_support/">NavCalc</a></li><li><a href="/pilotiq_support/">Pilotiq</a></li></ul></div>
+      <div><h2 class="footer__h">Help</h2><ul><li><a href="/support/">Support</a></li><li><a href="mailto:support@antonchik.com">support@antonchik.com</a></li><li><a href="https://ko-fi.com/K3K56CCST" target="_blank" rel="noopener">Support my work</a></li></ul></div>
+      <div><h2 class="footer__h">Legal</h2><ul><li><a href="/legal/">All documents</a></li><li><a href="/privacy/navcalc/">Privacy · NavCalc</a></li><li><a href="/privacy/pilotiq/">Privacy · Pilotiq</a></li><li><a href="/terms/pilotiq/">Terms · Pilotiq</a></li></ul></div>
     </div>
     <div class="footer__big" aria-hidden="true">Antonchik</div>
     <div class="footer__bottom">
       <span>© <span data-year>2026</span> Anton Antonchik · <a href="https://antonchik.com">antonchik.com</a></span>
-      <span class="status"><i></i>All systems normal</span>
+      <a class="totop" href="#top">Back to top <span aria-hidden="true">↑</span></a>
     </div>
   </div>
 </footer>

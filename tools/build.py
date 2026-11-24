@@ -9,6 +9,7 @@ ROOT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.dirname(os.
 SITE = "https://anton.antonchik.com"
 UPDATED = "23 November 2026"
 UPDATED_ISO = "2026-11-23"
+UPDATED_SHORT = "23 Nov 2026"
 KOFI = "https://ko-fi.com/K3K56CCST"
 DEV_EMAIL = "support@antonchik.com"
 
@@ -33,6 +34,11 @@ I = {
 APPS = {
  "navcalc": dict(
    name="NavCalc", slug="navcalc", page="/navcalcapp_support/", tint="t-navcalc",
+   review=[("Rate on the App Store","https://apps.apple.com/app/id1586660769?action=write-review"),("Open in AppGallery","https://appgallery.cloud.huawei.com/ag/n/app/C104806419")],
+   store_names="the App Store and AppGallery",
+   shots=[("Converter","Unit converter: distance, height, speed, vertical speed, gradient and time"),("Geodesy","Geodetic problems, magnetic field, intersection of radials, distance to the horizon"),
+          ("Flight","Wind triangle, wind components, holding pattern, turns and segment calculation"),("Atmosphere","Standard atmosphere, airspeed, QNH/QFE and temperature correction"),
+          ("Holding pattern","Holding pattern entry diagram showing a direct entry")],
    tagline="The flight navigation computer, rebuilt for your pocket.",
    short="A precise navigation calculator for pilots and aviation students — unit conversions, geodesy, wind triangles, ISA and a complete aviation reference in one calm interface.",
    category="Aviation · Utilities", email="navcalc@antonchik.com",
@@ -56,6 +62,11 @@ APPS = {
  ),
  "pilotiq": dict(
    name="Pilotiq", slug="pilotiq", page="/pilotiq_support/", tint="t-pilotiq",
+   review=[("Rate on the App Store","https://apps.apple.com/app/id6446788760?action=write-review"),("Rate on Google Play","https://play.google.com/store/apps/details?id=antonchik.anton.pilotiq")],
+   store_names="the App Store and Google Play",
+   shots=[("Exams","Exam list: PPL(A), PPL(H), PL(G) and PL(FB), in Polish and English"),("Subjects","Subjects of the PPL(A) exam: air law, communications, meteorology, navigation and more"),
+          ("Exam simulator","Exam simulator start screen: 12 questions, 30 minutes, 75 % to pass"),("Question","An exam question with four answer options"),
+          ("Result","Result screen: 12 of 12 correct, 100 %")],
    tagline="Your copilot for the ULC theory exam.",
    short="Exam preparation for Polish pilot licence theory exams at ULC — PPL(A), PPL(H), PL(G) and PL(FB). Hundreds of questions across every subject, with PPL(A) and PPL(H) also available in English.",
    category="Education · Aviation", email="pilotiq@antonchik.com",
@@ -114,7 +125,7 @@ def head(title, desc, path, body_cls=""):
 <link rel="stylesheet" href="/assets/site.css">
 <script defer src="/assets/site.js"></script>
 </head>
-<body class="{body_cls}">
+<body class="{body_cls}" id="top">
 <div class="ambient" aria-hidden="true"></div>
 <header class="nav">
   <div class="nav__inner">
@@ -122,7 +133,13 @@ def head(title, desc, path, body_cls=""):
     <nav class="nav__links" aria-label="Primary">
       <a href="/#apps">Apps</a><a href="/#open-source">Open source</a><a href="/support/">Support</a><a href="/legal/">Legal</a>
     </nav>
-    <a class="btn btn--sm btn--primary" href="mailto:{DEV_EMAIL}">Contact</a>
+    <div class="nav__end">
+      <details class="nav__menu">
+        <summary aria-label="Menu"><span></span></summary>
+        <nav aria-label="Menu"><a href="/#apps">Apps</a><a href="/#open-source">Open source</a><a href="/support/">Support</a><a href="/legal/">Legal</a></nav>
+      </details>
+      <a class="btn btn--sm btn--primary" href="mailto:{DEV_EMAIL}">Contact</a>
+    </div>
   </div>
 </header>
 <main>
@@ -135,17 +152,17 @@ def foot():
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="brand" href="/"><span class="brand__mark">{I["mark"]}</span><span>Anton Antonchik</span></a>
+        <a class="brand" href="/"><span class="brand__mark">{I["mark"].replace("lgF","lgF2")}</span><span>Anton Antonchik</span></a>
         <p class="muted" style="max-width:34ch;margin:18px 0 0;font-size:14.5px">Independent developer of mobile apps and open-source Dart packages. Built with care, supported personally.</p>
       </div>
-      <div><h4>Apps</h4><ul>{apps}</ul></div>
-      <div><h4>Help</h4><ul><li><a href="/support/">Support</a></li><li><a href="mailto:{DEV_EMAIL}">{DEV_EMAIL}</a></li><li><a href="{KOFI}" target="_blank" rel="noopener">Support my work</a></li></ul></div>
-      <div><h4>Legal</h4><ul><li><a href="/legal/">All documents</a></li><li><a href="/privacy/navcalc/">Privacy · NavCalc</a></li><li><a href="/privacy/pilotiq/">Privacy · Pilotiq</a></li><li><a href="/terms/pilotiq/">Terms · Pilotiq</a></li></ul></div>
+      <div><h2 class="footer__h">Apps</h2><ul>{apps}</ul></div>
+      <div><h2 class="footer__h">Help</h2><ul><li><a href="/support/">Support</a></li><li><a href="mailto:{DEV_EMAIL}">{DEV_EMAIL}</a></li><li><a href="{KOFI}" target="_blank" rel="noopener">Support my work</a></li></ul></div>
+      <div><h2 class="footer__h">Legal</h2><ul><li><a href="/legal/">All documents</a></li><li><a href="/privacy/navcalc/">Privacy · NavCalc</a></li><li><a href="/privacy/pilotiq/">Privacy · Pilotiq</a></li><li><a href="/terms/pilotiq/">Terms · Pilotiq</a></li></ul></div>
     </div>
     <div class="footer__big" aria-hidden="true">Antonchik</div>
     <div class="footer__bottom">
       <span>© <span data-year>2026</span> Anton Antonchik · <a href="https://antonchik.com">antonchik.com</a></span>
-      <span class="status"><i></i>All systems normal</span>
+      <a class="totop" href="#top">Back to top <span aria-hidden="true">↑</span></a>
     </div>
   </div>
 </footer>
@@ -188,7 +205,7 @@ def instrument():
         a = math.radians(d)
         x, y = C + (R+16)*math.sin(a), C - (R+16)*math.cos(a)
         t = {0: "N", 90: "E", 180: "S", 270: "W"}.get(d, f"{d//10:02d}")
-        col, op = ("#dc1038", "1") if d == 0 else ("#0a3492", "1" if d % 90 == 0 else ".5")
+        col, op = ("#dc1038", "1") if d == 0 else ("#0a3492", "1" if d % 90 == 0 else ".65")
         g.append(f'<text x="{x:.1f}" y="{y:.1f}" fill="{col}" fill-opacity="{op}" {MONO} font-size="{14 if d % 90 == 0 else 12}" text-anchor="middle" dominant-baseline="central">{t}</text>')
     plane = "M0 -20C1.9 -20 2.6 -17 2.6 -14L2.6 -5L18 3L18 6.5L2.6 2.5L2.4 11L7 14.5L7 17L0 15.5L-7 17L-7 14.5L-2.4 11L-2.6 2.5L-18 6.5L-18 3L-2.6 -5L-2.6 -14C-2.6 -17 -1.9 -20 0 -20Z"
     cell = lambda cid, lab, out=False: f'<div class="wt__cell{" wt__cell--out" if out else ""}"><small id="{cid}-l">{lab}</small><b id="{cid}">—</b></div>'
@@ -391,7 +408,7 @@ DOCS = [
 def docs_table():
     out = '<div class="docs reveal">'
     for t,a,h in DOCS:
-        out += f'<a class="doc" href="{h}"><span class="doc__t">{t}</span><span class="doc__m">{a}</span><span class="doc__m">Updated {UPDATED}</span><span class="doc__arrow">{I["arrow"]}</span></a>'
+        out += f'<a class="doc" href="{h}"><span class="doc__t">{t}</span><span class="doc__m">{a}</span><span class="doc__m">Updated {UPDATED_SHORT}</span><span class="doc__arrow">{I["arrow"]}</span></a>'
     return out + '</div>'
 
 GENERAL_FAQ = [
@@ -403,9 +420,9 @@ GENERAL_FAQ = [
  ("How quickly will I get an answer?","Usually within a few business days. Messages are answered in English, Polish or Russian."),
 ]
 
-def faq_html(items, title="Frequently asked"):
+def faq_html(items, title="Frequently asked", tag="h3"):
     q = "".join(f'<details><summary>{a}</summary><div class="ans"><p>{b}</p></div></details>' for a,b in items)
-    return f'<div class="faq reveal"><div><span class="eyebrow">FAQ</span><h3 style="margin-top:14px">{title}</h3></div><div>{q}</div></div>'
+    return f'<div class="faq reveal"><div><span class="eyebrow">FAQ</span><{tag} class="faq__t">{title}</{tag}></div><div>{q}</div></div>'
 
 def simple_hero(crumb, eyebrow, h1, lead):
     return f'''<section class="page-hero">
@@ -424,7 +441,7 @@ def simple_hero(crumb, eyebrow, h1, lead):
 def page_support():
     s = head("Support — Anton Antonchik", "Get help with NavCalc and Pilotiq: contact support, manage subscriptions, restore purchases and delete your data.", "/support/")
     s += simple_hero("Support", "Support centre", 'How can I <span class="serif grad">help?</span>', "Choose your app below to reach its support inbox directly. Most questions about purchases and data are answered in the FAQ.")
-    s += f'<section class="section" style="padding-top:64px"><div class="wrap">{support_cards()}{faq_html(GENERAL_FAQ)}</div></section>\n'
+    s += f'<section class="section" style="padding-top:64px"><div class="wrap"><h2 class="sr-only">Contact support</h2>{support_cards()}{faq_html(GENERAL_FAQ, tag="h2")}</div></section>\n'
     s += foot()
     write("/support/", s)
 
@@ -442,6 +459,8 @@ def page_app(k):
     stores = stores_html(a) or f'<div class="meta-row"><span class="tag"><i></i>Available on {a["platforms"]}</span></div>'
     legal_dd = " · ".join(f'<a href="{h}">{t}</a>' for t,h in a["legal"])
     cat = a["category"].replace("&","&amp;")
+    shots = "".join(f'<figure class="phone"><div class="phone__f"><img src="/assets/shots/{k}-{i+1}.webp" alt="{a["name"]} screenshot — {alt}" width="540" height="930" loading="lazy" decoding="async"></div><figcaption>{cap}</figcaption></figure>' for i,(cap,alt) in enumerate(a["shots"]))
+    rate = "".join(f'<a class="btn{" btn--primary" if i == 0 else ""}" href="{h}" target="_blank" rel="noopener">{t}{" " + I["arrow"] if i == 0 else ""}</a>' for i,(t,h) in enumerate(a["review"]))
     s += f'''<section class="page-hero">
   <div class="grid-bg" aria-hidden="true"></div>
   <div class="wrap">
@@ -470,7 +489,18 @@ def page_app(k):
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow reveal"><span class="idx">01</span> / Features</span>
+      <span class="eyebrow reveal"><span class="idx">01</span> / Inside the app</span>
+      <h2 class="reveal">Clear screens, <span class="serif">zero clutter.</span></h2>
+      <p class="lead reveal" data-d="1">Screenshots from the App Store listing.</p>
+    </div>
+  </div>
+  <div class="shots reveal" tabindex="0" role="region" aria-label="{a["name"]} screenshots">{shots}</div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal"><span class="idx">02</span> / Features</span>
       <h2 class="reveal">Everything you need. <span class="serif">Nothing you don’t.</span></h2>
     </div>
     <div class="features">{feats}</div>
@@ -480,7 +510,7 @@ def page_app(k):
 <section class="section" id="support">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow reveal"><span class="idx">02</span> / Support</span>
+      <span class="eyebrow reveal"><span class="idx">03</span> / Support</span>
       <h2 class="reveal">Need a hand with <span class="serif">{a["name"]}?</span></h2>
       <p class="lead reveal" data-d="1">Write to the support inbox below — include your device, OS and app version if you are reporting a problem.</p>
     </div>
@@ -507,8 +537,8 @@ def page_app(k):
     <div class="grid-lines" aria-hidden="true"></div><div class="band__glow" aria-hidden="true"></div>
     <span class="eyebrow"><span class="dot"></span>Enjoying {a["name"]}?</span>
     <h2>A short review helps <span class="serif grad">more than you think.</span></h2>
-    <p class="lead">Ratings in the App Store and Google Play help other people discover the app — and keep an independent developer going.</p>
-    <div class="hero__cta"><a class="btn btn--primary" href="{KOFI}" target="_blank" rel="noopener">Support my work {I["arrow"]}</a><a class="btn" href="/#apps">Other apps</a></div>
+    <p class="lead">Ratings in {a["store_names"]} help other people discover the app — and keep an independent developer going.</p>
+    <div class="hero__cta">{rate}<a class="btn" href="{KOFI}" target="_blank" rel="noopener">Support my work</a></div>
   </div>
 </section>
 '''
@@ -528,7 +558,7 @@ def legal_page(path, title, app, sections, intro, body_cls):
     <h1 class="rise" data-d="1" style="font-size:clamp(44px,7vw,92px);letter-spacing:-.05em;margin:22px 0 0">{title}</h1>
     <div class="meta-row rise" data-d="2"><span class="tag">Effective {UPDATED}</span><span class="tag">Last updated {UPDATED}</span></div>
     <div class="doc-layout">
-      <aside class="toc"><h4>Contents</h4><ol>{toc}</ol></aside>
+      <aside class="toc"><details open><summary>Contents</summary><ol>{toc}</ol></details></aside>
       <article class="prose">
         <div class="callout">{intro}</div>
         {body}
@@ -540,10 +570,16 @@ def legal_page(path, title, app, sections, intro, body_cls):
     s += foot()
     write(path, s)
 
-def privacy(k, ads, purchases, huawei=False):
+STORE_NAME = {"apple": "Apple App Store", "play": "Google Play", "huawei": "Huawei AppGallery"}
+STORE_POLICY = {"apple": '<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a>',
+                "play": '<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>',
+                "huawei": '<a href="https://consumer.huawei.com/en/privacy/privacy-policy/" target="_blank" rel="noopener">Huawei</a>'}
+
+def privacy(k, ads, purchases):
     a = APPS[k]; n = a["name"]; e = a["email"]
+    icons = [st[0] for st in a["stores"]]
     third = [
-      ("Apple App Store / Google Play" + (" / Huawei AppGallery" if huawei else ""), "Distribution of the App" + (", processing of purchases and subscriptions" if purchases else "") + ". The stores may provide aggregated, anonymous download and crash statistics.", "<a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Apple</a> · <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google</a>" + (" · <a href=\"https://consumer.huawei.com/en/privacy/privacy-policy/\" target=\"_blank\" rel=\"noopener\">Huawei</a>" if huawei else "")),
+      (" / ".join(STORE_NAME[i] for i in icons), "Distribution of the App" + (", processing of purchases and subscriptions" if purchases else "") + ". The stores may provide aggregated, anonymous download and crash statistics.", " · ".join(STORE_POLICY[i] for i in icons)),
       ("Google Firebase (Analytics, Crashlytics)", "Anonymous usage statistics and crash reports that help improve stability.", "<a href=\"https://firebase.google.com/support/privacy\" target=\"_blank\" rel=\"noopener\">Firebase</a>"),
     ]
     if ads:
@@ -608,7 +644,7 @@ def page_404():
 
 page_index(); page_support(); page_legal()
 for k in ORDER: page_app(k)
-privacy("navcalc", ads=True, purchases=False, huawei=True)
+privacy("navcalc", ads=True, purchases=False)
 privacy("pilotiq", ads=False, purchases=True)
 terms_pilotiq()
 redirect("/pilotiq_tos/", "/terms/pilotiq/")

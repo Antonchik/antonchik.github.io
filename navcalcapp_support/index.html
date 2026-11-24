@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="/assets/site.css">
 <script defer src="/assets/site.js"></script>
 </head>
-<body class="t-navcalc">
+<body class="t-navcalc" id="top">
 <div class="ambient" aria-hidden="true"></div>
 <header class="nav">
   <div class="nav__inner">
@@ -29,7 +29,13 @@
     <nav class="nav__links" aria-label="Primary">
       <a href="/#apps">Apps</a><a href="/#open-source">Open source</a><a href="/support/">Support</a><a href="/legal/">Legal</a>
     </nav>
-    <a class="btn btn--sm btn--primary" href="mailto:support@antonchik.com">Contact</a>
+    <div class="nav__end">
+      <details class="nav__menu">
+        <summary aria-label="Menu"><span></span></summary>
+        <nav aria-label="Menu"><a href="/#apps">Apps</a><a href="/#open-source">Open source</a><a href="/support/">Support</a><a href="/legal/">Legal</a></nav>
+      </details>
+      <a class="btn btn--sm btn--primary" href="mailto:support@antonchik.com">Contact</a>
+    </div>
   </div>
 </header>
 <main>
@@ -61,7 +67,18 @@
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow reveal"><span class="idx">01</span> / Features</span>
+      <span class="eyebrow reveal"><span class="idx">01</span> / Inside the app</span>
+      <h2 class="reveal">Clear screens, <span class="serif">zero clutter.</span></h2>
+      <p class="lead reveal" data-d="1">Screenshots from the App Store listing.</p>
+    </div>
+  </div>
+  <div class="shots reveal" tabindex="0" role="region" aria-label="NavCalc screenshots"><figure class="phone"><div class="phone__f"><img src="/assets/shots/navcalc-1.webp" alt="NavCalc screenshot — Unit converter: distance, height, speed, vertical speed, gradient and time" width="540" height="930" loading="lazy" decoding="async"></div><figcaption>Converter</figcaption></figure><figure class="phone"><div class="phone__f"><img src="/assets/shots/navcalc-2.webp" alt="NavCalc screenshot — Geodetic problems, magnetic field, intersection of radials, distance to the horizon" width="540" height="930" loading="lazy" decoding="async"></div><figcaption>Geodesy</figcaption></figure><figure class="phone"><div class="phone__f"><img src="/assets/shots/navcalc-3.webp" alt="NavCalc screenshot — Wind triangle, wind components, holding pattern, turns and segment calculation" width="540" height="930" loading="lazy" decoding="async"></div><figcaption>Flight</figcaption></figure><figure class="phone"><div class="phone__f"><img src="/assets/shots/navcalc-4.webp" alt="NavCalc screenshot — Standard atmosphere, airspeed, QNH/QFE and temperature correction" width="540" height="930" loading="lazy" decoding="async"></div><figcaption>Atmosphere</figcaption></figure><figure class="phone"><div class="phone__f"><img src="/assets/shots/navcalc-5.webp" alt="NavCalc screenshot — Holding pattern entry diagram showing a direct entry" width="540" height="930" loading="lazy" decoding="async"></div><figcaption>Holding pattern</figcaption></figure></div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal"><span class="idx">02</span> / Features</span>
       <h2 class="reveal">Everything you need. <span class="serif">Nothing you don’t.</span></h2>
     </div>
     <div class="features"><article class="card feature reveal" data-d="0"><span class="n">01</span><h3>Unit conversions</h3><p>Distance, height, speed, time, pressure, temperature and more — switch between unit systems instantly, without ambiguity.</p></article><article class="card feature reveal" data-d="1"><span class="n">02</span><h3>Geodesy</h3><p>Direct and inverse geodetic problems, magnetic variation for any location, intersection of two radials and distance to the horizon.</p></article><article class="card feature reveal" data-d="2"><span class="n">03</span><h3>Flight tasks</h3><p>Wind triangle, crosswind and headwind components, holding pattern entries and parameters of turn.</p></article><article class="card feature reveal" data-d="0"><span class="n">04</span><h3>Atmosphere</h3><p>ISA values at altitude, TAS from IAS, QFE ⇄ QNH conversion and cold-temperature altimeter corrections.</p></article><article class="card feature reveal" data-d="1"><span class="n">05</span><h3>Reference</h3><p>Aircraft, airline and airport data, the phonetic alphabet with Morse code and a large handbook of aviation abbreviations.</p></article><article class="card feature reveal" data-d="2"><span class="n">06</span><h3>AIRAC calendar</h3><p>Always know when the next AIRAC cycle becomes effective — and the dates of the ones after it.</p></article></div>
@@ -71,7 +88,7 @@
 <section class="section" id="support">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow reveal"><span class="idx">02</span> / Support</span>
+      <span class="eyebrow reveal"><span class="idx">03</span> / Support</span>
       <h2 class="reveal">Need a hand with <span class="serif">NavCalc?</span></h2>
       <p class="lead reveal" data-d="1">Write to the support inbox below — include your device, OS and app version if you are reporting a problem.</p>
     </div>
@@ -89,7 +106,7 @@
         <div class="app__links"><a class="link-chip" href="/privacy/navcalc/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v6c0 4.2 3 7.6 7 9 4-1.4 7-4.8 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>Privacy Policy</a></div>
       </div>
     </div>
-    <div class="faq reveal"><div><span class="eyebrow">FAQ</span><h3 style="margin-top:14px">Questions about NavCalc</h3></div><div><details><summary>Are the calculations suitable for real flight planning?</summary><div class="ans"><p>NavCalc is built carefully against published standards (including ICAO Doc 7488 for the atmosphere model), but it is a training and reference aid. Always verify results against approved sources and your aircraft documentation.</p></div></details><details><summary>Which standards does NavCalc use?</summary><div class="ans"><p>All common aviation units are supported. Atmosphere calculations follow the ICAO Standard Atmosphere (Doc 7488).</p></div></details><details><summary>I found a wrong value or a missing abbreviation.</summary><div class="ans"><p>Thank you — please email the details (what you entered, what you expected, and your app version) and it will be corrected in a future update.</p></div></details><details><summary>How do I report a bug?</summary><div class="ans"><p>Email the support address of the app with a short description, the steps to reproduce it, your device model, OS version and app version. Screenshots help a lot.</p></div></details></div></div>
+    <div class="faq reveal"><div><span class="eyebrow">FAQ</span><h3 class="faq__t">Questions about NavCalc</h3></div><div><details><summary>Are the calculations suitable for real flight planning?</summary><div class="ans"><p>NavCalc is built carefully against published standards (including ICAO Doc 7488 for the atmosphere model), but it is a training and reference aid. Always verify results against approved sources and your aircraft documentation.</p></div></details><details><summary>Which standards does NavCalc use?</summary><div class="ans"><p>All common aviation units are supported. Atmosphere calculations follow the ICAO Standard Atmosphere (Doc 7488).</p></div></details><details><summary>I found a wrong value or a missing abbreviation.</summary><div class="ans"><p>Thank you — please email the details (what you entered, what you expected, and your app version) and it will be corrected in a future update.</p></div></details><details><summary>How do I report a bug?</summary><div class="ans"><p>Email the support address of the app with a short description, the steps to reproduce it, your device model, OS version and app version. Screenshots help a lot.</p></div></details></div></div>
   </div>
 </section>
 
@@ -98,8 +115,8 @@
     <div class="grid-lines" aria-hidden="true"></div><div class="band__glow" aria-hidden="true"></div>
     <span class="eyebrow"><span class="dot"></span>Enjoying NavCalc?</span>
     <h2>A short review helps <span class="serif grad">more than you think.</span></h2>
-    <p class="lead">Ratings in the App Store and Google Play help other people discover the app — and keep an independent developer going.</p>
-    <div class="hero__cta"><a class="btn btn--primary" href="https://ko-fi.com/K3K56CCST" target="_blank" rel="noopener">Support my work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn" href="/#apps">Other apps</a></div>
+    <p class="lead">Ratings in the App Store and AppGallery help other people discover the app — and keep an independent developer going.</p>
+    <div class="hero__cta"><a class="btn btn--primary" href="https://apps.apple.com/app/id1586660769?action=write-review" target="_blank" rel="noopener">Rate on the App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn" href="https://appgallery.cloud.huawei.com/ag/n/app/C104806419" target="_blank" rel="noopener">Open in AppGallery</a><a class="btn" href="https://ko-fi.com/K3K56CCST" target="_blank" rel="noopener">Support my work</a></div>
   </div>
 </section>
 </main>
@@ -107,17 +124,17 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="brand" href="/"><span class="brand__mark"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="lgF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a3b7ea"/><stop offset="1" stop-color="#5f7cc6"/></linearGradient></defs><path d="M31.7 85.6A38.3 38.3 0 1 1 68.3 85.6L60.6 62.5H39.4Z" fill="url(#lgF)"/><path d="M50 27.5 57 59H43Z" fill="#ffcf33"/><g fill="none" stroke="#0a3492" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M31.7 85.6A38.3 38.3 0 1 1 68.3 85.6"/><path d="M31.7 85.6 50 13.7 68.3 85.6M39.4 62.5H60.6"/></g></svg></span><span>Anton Antonchik</span></a>
+        <a class="brand" href="/"><span class="brand__mark"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="lgF2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a3b7ea"/><stop offset="1" stop-color="#5f7cc6"/></linearGradient></defs><path d="M31.7 85.6A38.3 38.3 0 1 1 68.3 85.6L60.6 62.5H39.4Z" fill="url(#lgF2)"/><path d="M50 27.5 57 59H43Z" fill="#ffcf33"/><g fill="none" stroke="#0a3492" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M31.7 85.6A38.3 38.3 0 1 1 68.3 85.6"/><path d="M31.7 85.6 50 13.7 68.3 85.6M39.4 62.5H60.6"/></g></svg></span><span>Anton Antonchik</span></a>
         <p class="muted" style="max-width:34ch;margin:18px 0 0;font-size:14.5px">Independent developer of mobile apps and open-source Dart packages. Built with care, supported personally.</p>
       </div>
-      <div><h4>Apps</h4><ul><li><a href="/navcalcapp_support/">NavCalc</a></li><li><a href="/pilotiq_support/">Pilotiq</a></li></ul></div>
-      <div><h4>Help</h4><ul><li><a href="/support/">Support</a></li><li><a href="mailto:support@antonchik.com">support@antonchik.com</a></li><li><a href="https://ko-fi.com/K3K56CCST" target="_blank" rel="noopener">Support my work</a></li></ul></div>
-      <div><h4>Legal</h4><ul><li><a href="/legal/">All documents</a></li><li><a href="/privacy/navcalc/">Privacy · NavCalc</a></li><li><a href="/privacy/pilotiq/">Privacy · Pilotiq</a></li><li><a href="/terms/pilotiq/">Terms · Pilotiq</a></li></ul></div>
+      <div><h2 class="footer__h">Apps</h2><ul><li><a href="/navcalcapp_support/">NavCalc</a></li><li><a href="/pilotiq_support/">Pilotiq</a></li></ul></div>
+      <div><h2 class="footer__h">Help</h2><ul><li><a href="/support/">Support</a></li><li><a href="mailto:support@antonchik.com">support@antonchik.com</a></li><li><a href="https://ko-fi.com/K3K56CCST" target="_blank" rel="noopener">Support my work</a></li></ul></div>
+      <div><h2 class="footer__h">Legal</h2><ul><li><a href="/legal/">All documents</a></li><li><a href="/privacy/navcalc/">Privacy · NavCalc</a></li><li><a href="/privacy/pilotiq/">Privacy · Pilotiq</a></li><li><a href="/terms/pilotiq/">Terms · Pilotiq</a></li></ul></div>
     </div>
     <div class="footer__big" aria-hidden="true">Antonchik</div>
     <div class="footer__bottom">
       <span>© <span data-year>2026</span> Anton Antonchik · <a href="https://antonchik.com">antonchik.com</a></span>
-      <span class="status"><i></i>All systems normal</span>
+      <a class="totop" href="#top">Back to top <span aria-hidden="true">↑</span></a>
     </div>
   </div>
 </footer>
