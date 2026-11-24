@@ -42,6 +42,19 @@
     });
   });
 
+  // Small-screen menu: close on outside click, Escape, or after choosing a link
+  var menu = document.querySelector(".nav__menu");
+  if (menu) {
+    document.addEventListener("click", function (e) {
+      if (menu.open && (!menu.contains(e.target) || e.target.closest("nav a"))) menu.open = false;
+    });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") menu.open = false; });
+  }
+
+  // Legal pages: contents list starts collapsed on small screens
+  var tocBox = document.querySelector(".toc details");
+  if (tocBox && window.matchMedia && window.matchMedia("(max-width: 999px)").matches) tocBox.open = false;
+
   // Table of contents highlight (legal pages)
   var tocLinks = document.querySelectorAll(".toc a");
   if (tocLinks.length && "IntersectionObserver" in window) {
