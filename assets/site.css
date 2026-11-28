@@ -434,6 +434,10 @@ h1,h2,h3{ margin:0; font-weight:600; letter-spacing:-.035em; line-height:1.03; c
 .prose{ max-width:780px; color:var(--text-2); font-size:16.5px; line-height:1.75; background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:clamp(24px, 4vw, 52px); box-shadow:var(--shadow-sm); }
 .prose h2{ font-size:clamp(22px, 2.4vw, 26px); letter-spacing:-.025em; line-height:1.2; margin:52px 0 16px; display:flex; gap:14px; align-items:baseline; }
 .prose h2 .n{ font-family:var(--mono); font-size:12px; color:var(--accent); letter-spacing:.06em; font-weight:500; }
+/* documents published verbatim from another source: section numbers come from CSS, not from the text */
+.prose--plain{ counter-reset:sec; }
+.prose--plain h2::before{ counter-increment:sec; content:counter(sec, decimal-leading-zero); font-family:var(--mono); font-size:12px; color:var(--accent); letter-spacing:.06em; font-weight:500; }
+.prose--plain > p:first-child{ margin-top:0; }
 .prose h3{ font-size:18px; letter-spacing:-.015em; margin:30px 0 10px; }
 .prose p{ margin:0 0 16px; }
 .prose ul{ margin:0 0 18px; padding-left:0; list-style:none; }
