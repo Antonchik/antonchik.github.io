@@ -3,7 +3,7 @@
 
 Content (apps, texts, legal documents) lives in this file; styles and scripts live in assets/.
 """
-import math, os, sys, html
+import math, os, re, sys, html
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://anton.antonchik.com"
@@ -401,14 +401,14 @@ def support_cards():
     return out + '</div>'
 
 DOCS = [
-  ("Privacy Policy","NavCalc","/privacy/navcalc/"),
-  ("Privacy Policy","Pilotiq","/privacy/pilotiq/"),
-  ("Terms of Service","Pilotiq","/terms/pilotiq/"),
+  ("Privacy Policy","NavCalc","/privacy/navcalc/","28 Nov 2026","2026-11-28"),
+  ("Privacy Policy","Pilotiq","/privacy/pilotiq/",UPDATED_SHORT,UPDATED_ISO),
+  ("Terms of Service","Pilotiq","/terms/pilotiq/",UPDATED_SHORT,UPDATED_ISO),
 ]
 def docs_table():
     out = '<div class="docs reveal">'
-    for t,a,h in DOCS:
-        out += f'<a class="doc" href="{h}"><span class="doc__t">{t}</span><span class="doc__m">{a}</span><span class="doc__m">Updated {UPDATED_SHORT}</span><span class="doc__arrow">{I["arrow"]}</span></a>'
+    for t,a,h,upd,_ in DOCS:
+        out += f'<a class="doc" href="{h}"><span class="doc__t">{t}</span><span class="doc__m">{a}</span><span class="doc__m">Updated {upd}</span><span class="doc__arrow">{I["arrow"]}</span></a>'
     return out + '</div>'
 
 GENERAL_FAQ = [
@@ -416,7 +416,7 @@ GENERAL_FAQ = [
  ("How do I manage or cancel a subscription?","Subscriptions are billed by Apple or Google. iPhone/iPad: Settings → your name → Subscriptions. Android: Google Play → Profile → Payments &amp; subscriptions → Subscriptions. Cancel at least 24 hours before renewal to avoid the next charge."),
  ("How do I restore a purchase?","Make sure you are signed in with the same Apple ID or Google account used for the purchase, then use “Restore purchases” inside the app."),
  ("How do I request a refund?","Refunds are processed by the store: <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a> for the App Store, or your order history in Google Play."),
- ("How do I delete my data?","The apps do not require an account and keep your data on your device. Deleting the app removes it. To delete any correspondence you have sent to support, email the app’s support address with the subject “Data deletion” — it will be removed within 30 days."),
+ ("How do I delete my data?","The apps do not require an account and keep your data on your device. Deleting the app removes it. To delete any correspondence you have sent to support, email the app’s support address with the subject “Data deletion” — it will be removed within 30 days. Each app’s privacy policy lists anything else that can be deleted on request."),
  ("How quickly will I get an answer?","Usually within a few business days. Messages are answered in English, Polish or Russian."),
 ]
 
@@ -570,6 +570,46 @@ def legal_page(path, title, app, sections, intro, body_cls):
     s += foot()
     write(path, s)
 
+def legal_from_file(path, src, app, body_cls):
+    """Publish a legal document that is maintained elsewhere, inside the site layout.
+
+    The text is taken verbatim from `src` (a self-contained HTML page): its <title>, description,
+    <h1>, the "meta" line and everything after it. Only ids are added to the <h2> headings, for the
+    contents list. Do not edit the wording here: update the source file instead.
+    """
+    raw = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), src), encoding="utf-8").read()
+    title = re.search(r"<title>(.*?)</title>", raw, re.S).group(1).strip()
+    desc = re.search(r'<meta name="description" content="(.*?)">', raw, re.S).group(1).strip()
+    main = re.search(r"<main>(.*?)</main>", raw, re.S).group(1)
+    h1 = re.search(r"<h1>(.*?)</h1>", main, re.S).group(1).strip()
+    meta = re.search(r'<p class="meta">(.*?)</p>', main, re.S)
+    body = main[meta.end():].strip()
+    titles = []
+    def add_id(m):
+        titles.append(m.group(1).strip())
+        return f'<h2 id="s{len(titles)}">{m.group(1)}</h2>'
+    body = re.sub(r"<h2>(.*?)</h2>", add_id, body, flags=re.S)
+    toc = "".join(f'<li><a href="#s{i+1}">{t}</a></li>' for i, t in enumerate(titles))
+    s = head(title, desc, path, body_cls)
+    s += f'''<section class="page-hero">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="crumbs rise"><a href="/">Home</a><span>/</span><a href="/legal/">Legal</a><span>/</span><span>{app}</span></div>
+    <div style="margin-top:36px"><span class="eyebrow rise" data-d="1"><span class="dot"></span>{app}</span></div>
+    <h1 class="rise" data-d="1" style="font-size:clamp(40px,6.4vw,84px);letter-spacing:-.05em;margin:22px 0 0">{h1}</h1>
+    <div class="meta-row rise" data-d="2"><span class="tag">{meta.group(1).strip()}</span></div>
+    <div class="doc-layout">
+      <aside class="toc"><details open><summary>Contents</summary><ol>{toc}</ol></details></aside>
+      <article class="prose prose--plain">
+{body}
+      </article>
+    </div>
+  </div>
+</section>
+'''
+    s += foot()
+    write(path, s)
+
 STORE_NAME = {"apple": "Apple App Store", "play": "Google Play", "huawei": "Huawei AppGallery"}
 STORE_POLICY = {"apple": '<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a>',
                 "play": '<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>',
@@ -644,15 +684,18 @@ def page_404():
 
 page_index(); page_support(); page_legal()
 for k in ORDER: page_app(k)
-privacy("navcalc", ads=True, purchases=False)
+# NavCalc: the policy is maintained in the app repository (Antonchik/navcalcapp, web/privacy.html)
+legal_from_file("/privacy/navcalc/", "content/navcalc-privacy.html", "NavCalc", "t-navcalc")
 privacy("pilotiq", ads=False, purchases=True)
 terms_pilotiq()
 redirect("/pilotiq_tos/", "/terms/pilotiq/")
 page_404()
 
+DOC_DATES = {h: iso for _,_,h,_,iso in DOCS}
+DOC_DATES["/legal/"] = max(DOC_DATES.values())
 urls = ["/","/support/","/legal/"] + [APPS[k]["page"] for k in ORDER] + ["/privacy/navcalc/","/privacy/pilotiq/","/terms/pilotiq/"]
 with open(os.path.join(ROOT,"sitemap.xml"),"w") as f:
-    f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{UPDATED_ISO}</lastmod></url>\n" for u in urls) + "</urlset>\n")
+    f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{DOC_DATES.get(u, UPDATED_ISO)}</lastmod></url>\n" for u in urls) + "</urlset>\n")
 with open(os.path.join(ROOT,"robots.txt"),"w") as f:
     f.write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 print("ok")

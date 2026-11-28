@@ -28,7 +28,7 @@ wrangler.jsonc          Cloudflare Workers config
 
 ## Editing
 
-Texts, app data and legal documents live in `tools/build.py`. After changing it, run `python3 tools/build.py` — it rewrites the HTML pages in place — and commit the result. Styles and scripts in `assets/` are edited directly.
+Texts, app data and legal documents live in `tools/build.py`. Exception: the NavCalc privacy policy is maintained in the app repository (`Antonchik/navcalcapp`, `web/privacy.html`). A verbatim copy is kept in `tools/content/navcalc-privacy.html`; the generator wraps its text in the site layout without changing the wording. To update the policy, replace that file with the new version from the app repository and rebuild. After changing it, run `python3 tools/build.py` — it rewrites the HTML pages in place — and commit the result. Styles and scripts in `assets/` are edited directly.
 
 ## Deploy
 
